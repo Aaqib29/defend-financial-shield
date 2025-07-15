@@ -70,43 +70,47 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-primary/80" />
         
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           {/* Logo */}
-          <div className="mb-8">
-            <div className="flex items-center justify-center mb-4">
-              <Shield className="h-12 w-12 text-accent mr-3" />
-              <h1 className="text-4xl md:text-5xl font-poppins font-bold tracking-tight">
+          <div className="mb-12">
+            <div className="flex items-center justify-center mb-6">
+              <Shield className="h-10 w-10 sm:h-12 sm:w-12 text-accent mr-3" />
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold tracking-tight">
                 INFRADEFEND
               </h1>
             </div>
           </div>
 
           {/* Headlines */}
-          <h2 className="text-5xl md:text-7xl font-poppins font-bold mb-6 leading-tight">
-            Smart Cybersecurity for
-            <span className="text-accent block">Merchant Bankers</span>
-          </h2>
-          
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
-            Helping you meet SEBI's CSCRF and IT compliance standards — with clarity, speed, and security.
-          </p>
-          
-          <Button 
-            variant="cta" 
-            size="lg" 
-            onClick={scrollToContact}
-            className="text-lg px-8 py-4 h-auto"
-          >
-            Get a Free Audit Call
-          </Button>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-bold mb-8 leading-tight">
+              Smart Cybersecurity for
+              <span className="text-accent block mt-2">Merchant Bankers</span>
+            </h2>
+            
+            <p className="text-lg sm:text-xl md:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed opacity-90">
+              Helping you meet SEBI's CSCRF and IT compliance standards — with clarity, speed, and security.
+            </p>
+            
+            <div className="flex justify-center">
+              <Button 
+                variant="cta" 
+                size="lg" 
+                onClick={scrollToContact}
+                className="text-lg px-8 py-4 h-auto transform hover:scale-105 transition-transform duration-200"
+              >
+                Get a Free Audit Call
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
               About InfraDefend
             </h2>
             <div className="max-w-4xl mx-auto">
@@ -119,23 +123,23 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-muted">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
+      <section className="py-16 sm:py-20 lg:py-24 bg-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
               Our Services
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="h-full shadow-card hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8 text-center">
-                  <service.icon className="h-12 w-12 text-accent mx-auto mb-6" />
-                  <h3 className="text-xl font-poppins font-semibold text-primary mb-4">
+              <Card key={index} className="h-full shadow-card hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+                <CardContent className="p-6 sm:p-8 text-center flex flex-col items-center">
+                  <service.icon className="h-12 w-12 text-accent mx-auto mb-6 flex-shrink-0" />
+                  <h3 className="text-lg sm:text-xl font-poppins font-semibold text-primary mb-4 text-center">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-center flex-grow">
                     {service.description}
                   </p>
                 </CardContent>
@@ -146,20 +150,20 @@ const Index = () => {
       </section>
 
       {/* Why InfraDefend Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
               Why InfraDefend?
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
             {whyChooseUs.map((item, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <CheckCircle className="h-8 w-8 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-xl font-poppins font-semibold text-primary mb-3">
+              <div key={index} className="flex items-start space-x-4 group">
+                <CheckCircle className="h-8 w-8 text-accent flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-200" />
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-poppins font-semibold text-primary mb-3">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -173,63 +177,71 @@ const Index = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-primary">
-        <div className="max-w-4xl mx-auto px-6 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-primary">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-6">
             Ready for CSCRF without hiring a full team?
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-lg sm:text-xl mb-8 sm:mb-10 opacity-90 max-w-3xl mx-auto">
             Let's make your audit easy, fast, and compliant.
           </p>
-          <Button 
-            variant="cta" 
-            size="lg" 
-            onClick={scrollToContact}
-            className="text-lg px-8 py-4 h-auto"
-          >
-            Schedule a Free Call
-          </Button>
+          <div className="flex justify-center">
+            <Button 
+              variant="cta" 
+              size="lg" 
+              onClick={scrollToContact}
+              className="text-lg px-8 py-4 h-auto transform hover:scale-105 transition-transform duration-200"
+            >
+              Schedule a Free Call
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-background">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
+      <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-primary mb-6">
               Contact Us
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="flex flex-col items-center">
-              <Mail className="h-12 w-12 text-accent mb-4" />
-              <h3 className="text-xl font-poppins font-semibold text-primary mb-2">Email</h3>
+          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+            <div className="flex flex-col items-center text-center group">
+              <div className="p-4 bg-accent/10 rounded-full mb-6 group-hover:bg-accent/20 transition-colors duration-200">
+                <Mail className="h-8 w-8 text-accent" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-poppins font-semibold text-primary mb-3">Email</h3>
               <a 
                 href="mailto:hello@infradefend.com" 
-                className="text-muted-foreground hover:text-accent transition-colors"
+                className="text-muted-foreground hover:text-accent transition-colors duration-200 break-all"
               >
                 hello@infradefend.com
               </a>
             </div>
             
-            <div className="flex flex-col items-center">
-              <Phone className="h-12 w-12 text-accent mb-4" />
-              <h3 className="text-xl font-poppins font-semibold text-primary mb-2">Phone/WhatsApp</h3>
+            <div className="flex flex-col items-center text-center group">
+              <div className="p-4 bg-accent/10 rounded-full mb-6 group-hover:bg-accent/20 transition-colors duration-200">
+                <Phone className="h-8 w-8 text-accent" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-poppins font-semibold text-primary mb-3">Phone/WhatsApp</h3>
               <a 
                 href="tel:+91XXXXXXXXXX" 
-                className="text-muted-foreground hover:text-accent transition-colors"
+                className="text-muted-foreground hover:text-accent transition-colors duration-200"
               >
                 +91-XXXXXXXXXX
               </a>
             </div>
             
-            <div className="flex flex-col items-center">
-              <Linkedin className="h-12 w-12 text-accent mb-4" />
-              <h3 className="text-xl font-poppins font-semibold text-primary mb-2">LinkedIn</h3>
+            <div className="flex flex-col items-center text-center group">
+              <div className="p-4 bg-accent/10 rounded-full mb-6 group-hover:bg-accent/20 transition-colors duration-200">
+                <Linkedin className="h-8 w-8 text-accent" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-poppins font-semibold text-primary mb-3">LinkedIn</h3>
               <a 
                 href="#" 
-                className="text-muted-foreground hover:text-accent transition-colors"
+                className="text-muted-foreground hover:text-accent transition-colors duration-200"
               >
                 Connect with us
               </a>
@@ -239,8 +251,8 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-primary text-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <footer className="py-6 sm:py-8 bg-primary text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm opacity-80">
               © 2025 InfraDefend | Cybersecurity & IT Compliance Consulting
