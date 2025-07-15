@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cta: {
+					DEFAULT: 'hsl(var(--cta-button))',
+					foreground: 'hsl(var(--cta-button-foreground))',
+					hover: 'hsl(var(--cta-button-hover))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-hero': 'var(--gradient-hero)',
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'cta': 'var(--shadow-cta)',
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
