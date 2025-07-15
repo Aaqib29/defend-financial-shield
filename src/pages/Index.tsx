@@ -207,17 +207,17 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-2xl mx-auto">
             <div className="flex flex-col items-center text-center group">
               <div className="p-4 bg-accent/10 rounded-full mb-6 group-hover:bg-accent/20 transition-colors duration-200">
                 <Mail className="h-8 w-8 text-accent" />
               </div>
               <h3 className="text-lg sm:text-xl font-poppins font-semibold text-primary mb-3">Email</h3>
               <a 
-                href="mailto:hello@infradefend.com" 
+                href="mailto:contact@infradefend.com" 
                 className="text-muted-foreground hover:text-accent transition-colors duration-200 break-all"
               >
-                hello@infradefend.com
+                contact@infradefend.com
               </a>
             </div>
             
@@ -227,23 +227,10 @@ const Index = () => {
               </div>
               <h3 className="text-lg sm:text-xl font-poppins font-semibold text-primary mb-3">Phone/WhatsApp</h3>
               <a 
-                href="tel:+91XXXXXXXXXX" 
+                href="tel:+918369645695" 
                 className="text-muted-foreground hover:text-accent transition-colors duration-200"
               >
-                +91-XXXXXXXXXX
-              </a>
-            </div>
-            
-            <div className="flex flex-col items-center text-center group">
-              <div className="p-4 bg-accent/10 rounded-full mb-6 group-hover:bg-accent/20 transition-colors duration-200">
-                <Linkedin className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-poppins font-semibold text-primary mb-3">LinkedIn</h3>
-              <a 
-                href="#" 
-                className="text-muted-foreground hover:text-accent transition-colors duration-200"
-              >
-                Connect with us
+                +91-8369645695
               </a>
             </div>
           </div>
