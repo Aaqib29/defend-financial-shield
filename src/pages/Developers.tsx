@@ -51,25 +51,29 @@ const Developers = () => {
       title: "E-Commerce App",
       description: "Full-featured shopping experience",
       demoUrl: "https://react-shopping-cart-67954.firebaseapp.com/",
-      type: "mobile"
+      type: "mobile",
+      bgColor: "bg-blue-50"
     },
     {
-      title: "FinTech Dashboard",
-      description: "Real-time financial analytics",
-      demoUrl: "https://bank-dashboard-rho.vercel.app/",
-      type: "web"
+      title: "Task Management",
+      description: "Project management dashboard",
+      demoUrl: "https://todoist.com/app/",
+      type: "web",
+      bgColor: "bg-red-50"
     },
     {
-      title: "Healthcare Portal",
-      description: "Patient management system",
-      demoUrl: "https://patient-management-system-lake.vercel.app/",
-      type: "web"
+      title: "Weather App",
+      description: "Real-time weather tracking",
+      demoUrl: "https://weather.com/",
+      type: "mobile",
+      bgColor: "bg-sky-50"
     },
     {
-      title: "Social Platform",
-      description: "Community-driven mobile app",
-      demoUrl: "https://social-media-dashboard-delta-eight.vercel.app/",
-      type: "mobile"
+      title: "Recipe Platform",
+      description: "Food & cooking community",
+      demoUrl: "https://www.allrecipes.com/",
+      type: "web",
+      bgColor: "bg-orange-50"
     }
   ];
 
@@ -205,16 +209,18 @@ const Developers = () => {
               <div key={index} className="group cursor-pointer" onClick={() => window.open(mockup.demoUrl, '_blank')}>
                 <div className="relative bg-background rounded-2xl p-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
                   {mockup.type === 'mobile' ? (
-                    <div className="relative bg-gray-800 rounded-xl p-2 mx-auto" style={{ width: '200px', height: '400px' }}>
-                      <div className="w-full h-full bg-white rounded-lg relative overflow-hidden">
+                    <div className="relative bg-gray-900 rounded-xl p-2 mx-auto" style={{ width: '200px', height: '400px' }}>
+                      <div className={`w-full h-full ${mockup.bgColor} rounded-lg relative overflow-hidden border-2 border-gray-200`}>
+                        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gray-800 rounded-full"></div>
+                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gray-800 rounded-full"></div>
                         <iframe 
                           src={mockup.demoUrl}
-                          className="w-full h-full border-0 rounded-lg scale-75 origin-top-left"
-                          style={{ width: '133%', height: '133%' }}
+                          className="w-full h-full border-0 rounded-lg mt-4 mb-4"
+                          style={{ height: 'calc(100% - 32px)' }}
                           title={mockup.title}
                         />
-                        <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                          <div className="bg-white/90 rounded-full p-3">
+                        <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                          <div className="bg-white/90 rounded-full p-3 shadow-lg">
                             <Play className="w-8 h-8 text-primary" />
                           </div>
                         </div>
@@ -222,15 +228,20 @@ const Developers = () => {
                     </div>
                   ) : (
                     <div className="relative bg-gray-800 rounded-xl p-2 mx-auto" style={{ width: '200px', height: '300px' }}>
-                      <div className="w-full h-full bg-white rounded-lg relative overflow-hidden">
+                      <div className={`w-full h-full ${mockup.bgColor} rounded-lg relative overflow-hidden border-2 border-gray-200`}>
+                        <div className="absolute top-1 left-2 flex gap-1">
+                          <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
                         <iframe 
                           src={mockup.demoUrl}
-                          className="w-full h-full border-0 rounded-lg scale-50 origin-top-left"
-                          style={{ width: '200%', height: '200%' }}
+                          className="w-full h-full border-0 rounded-lg mt-4"
+                          style={{ height: 'calc(100% - 16px)' }}
                           title={mockup.title}
                         />
-                        <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                          <div className="bg-white/90 rounded-full p-3">
+                        <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                          <div className="bg-white/90 rounded-full p-3 shadow-lg">
                             <Play className="w-8 h-8 text-primary" />
                           </div>
                         </div>
