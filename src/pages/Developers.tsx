@@ -50,26 +50,26 @@ const Developers = () => {
     {
       title: "E-Commerce App",
       description: "Full-featured shopping experience",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=600&fit=crop",
-      demoLink: "#"
+      demoUrl: "https://react-shopping-cart-67954.firebaseapp.com/",
+      type: "mobile"
     },
     {
       title: "FinTech Dashboard",
       description: "Real-time financial analytics",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=600&fit=crop",
-      demoLink: "#"
+      demoUrl: "https://bank-dashboard-rho.vercel.app/",
+      type: "web"
     },
     {
       title: "Healthcare Portal",
       description: "Patient management system",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=600&fit=crop",
-      demoLink: "#"
+      demoUrl: "https://patient-management-system-lake.vercel.app/",
+      type: "web"
     },
     {
       title: "Social Platform",
       description: "Community-driven mobile app",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=600&fit=crop",
-      demoLink: "#"
+      demoUrl: "https://social-media-dashboard-delta-eight.vercel.app/",
+      type: "mobile"
     }
   ];
 
@@ -202,21 +202,47 @@ const Developers = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {mockups.map((mockup, index) => (
-              <div key={index} className="group cursor-pointer">
+              <div key={index} className="group cursor-pointer" onClick={() => window.open(mockup.demoUrl, '_blank')}>
                 <div className="relative bg-background rounded-2xl p-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
-                  <div className="relative bg-foreground rounded-xl p-2 mx-auto" style={{ width: '200px', height: '400px' }}>
-                    <div 
-                      className="w-full h-full bg-cover bg-center rounded-lg relative overflow-hidden"
-                      style={{ backgroundImage: `url(${mockup.image})` }}
-                    >
-                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Play className="w-12 h-12 text-white" />
+                  {mockup.type === 'mobile' ? (
+                    <div className="relative bg-gray-800 rounded-xl p-2 mx-auto" style={{ width: '200px', height: '400px' }}>
+                      <div className="w-full h-full bg-white rounded-lg relative overflow-hidden">
+                        <iframe 
+                          src={mockup.demoUrl}
+                          className="w-full h-full border-0 rounded-lg scale-75 origin-top-left"
+                          style={{ width: '133%', height: '133%' }}
+                          title={mockup.title}
+                        />
+                        <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="bg-white/90 rounded-full p-3">
+                            <Play className="w-8 h-8 text-primary" />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="relative bg-gray-800 rounded-xl p-2 mx-auto" style={{ width: '200px', height: '300px' }}>
+                      <div className="w-full h-full bg-white rounded-lg relative overflow-hidden">
+                        <iframe 
+                          src={mockup.demoUrl}
+                          className="w-full h-full border-0 rounded-lg scale-50 origin-top-left"
+                          style={{ width: '200%', height: '200%' }}
+                          title={mockup.title}
+                        />
+                        <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="bg-white/90 rounded-full p-3">
+                            <Play className="w-8 h-8 text-primary" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   <div className="text-center mt-4">
                     <h3 className="font-semibold">{mockup.title}</h3>
                     <p className="text-sm text-muted-foreground">{mockup.description}</p>
+                    <Button variant="outline" size="sm" className="mt-2">
+                      Try Live Demo
+                    </Button>
                   </div>
                 </div>
               </div>
