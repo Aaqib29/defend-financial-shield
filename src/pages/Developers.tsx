@@ -111,14 +111,14 @@ const Developers = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section className="relative py-20 px-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950 dark:via-indigo-950 dark:to-purple-950">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Rocket className="w-4 h-4" />
             InfraDefend Developers
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
             We Build Digital Products That Launch Fast & Scale Faster
           </h1>
           
@@ -130,39 +130,39 @@ const Developers = () => {
             <Button 
               size="lg" 
               onClick={scrollToContact}
-              className="text-lg px-8 py-3 h-auto group"
+              className="text-lg px-8 py-3 h-auto group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
             >
               Get a Free Tech Consultation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3 h-auto">
+            <Button variant="outline" size="lg" className="text-lg px-8 py-3 h-auto border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-950">
               View Our Work
             </Button>
           </div>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-primary">10+</div>
-              <div className="text-sm text-muted-foreground">Apps Delivered</div>
+            <div className="p-4 rounded-lg bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">10+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Apps Delivered</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary">50+</div>
-              <div className="text-sm text-muted-foreground">Websites Built</div>
+            <div className="p-4 rounded-lg bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">50+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Websites Built</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+            <div className="p-4 rounded-lg bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">100%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary">2-4 Weeks</div>
-              <div className="text-sm text-muted-foreground">Average Delivery</div>
+            <div className="p-4 rounded-lg bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold text-cyan-600 dark:text-cyan-400">2-4 Weeks</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Average Delivery</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* What We Build Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Build</h2>
@@ -173,10 +173,10 @@ const Developers = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-blue-500 bg-gradient-to-br from-white to-blue-50/30 dark:from-gray-800 dark:to-blue-950/30">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                    <service.icon className="w-6 h-6 text-white" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                   <CardDescription className="text-base">
@@ -184,7 +184,7 @@ const Developers = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-sm text-blue-600 dark:text-blue-400 font-medium">
                     {service.tech}
                   </div>
                 </CardContent>
@@ -195,7 +195,7 @@ const Developers = () => {
       </section>
 
       {/* Interactive Gallery Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950 dark:via-purple-950 dark:to-pink-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Try Our Work</h2>
@@ -207,7 +207,7 @@ const Developers = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {mockups.map((mockup, index) => (
               <div key={index} className="group cursor-pointer" onClick={() => window.open(mockup.demoUrl, '_blank')}>
-                <div className="relative bg-background rounded-2xl p-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+                <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
                   {mockup.type === 'mobile' ? (
                     <div className="relative bg-gray-900 rounded-xl p-2 mx-auto" style={{ width: '200px', height: '400px' }}>
                       <div className={`w-full h-full ${mockup.bgColor} rounded-lg relative overflow-hidden border-2 border-gray-200`}>
@@ -251,7 +251,7 @@ const Developers = () => {
                   <div className="text-center mt-4">
                     <h3 className="font-semibold">{mockup.title}</h3>
                     <p className="text-sm text-muted-foreground">{mockup.description}</p>
-                    <Button variant="outline" size="sm" className="mt-2">
+                    <Button variant="outline" size="sm" className="mt-2 border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-950">
                       Try Live Demo
                     </Button>
                   </div>
@@ -263,7 +263,7 @@ const Developers = () => {
       </section>
 
       {/* Why Work With Us Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Work With Us?</h2>
@@ -275,8 +275,8 @@ const Developers = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {whyChooseUs.map((item, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                  <item.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
@@ -287,7 +287,7 @@ const Developers = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-muted/30">
+      <section id="contact" className="py-20 px-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 dark:from-blue-950 dark:via-indigo-950 dark:to-cyan-950">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
@@ -296,7 +296,7 @@ const Developers = () => {
             </p>
           </div>
 
-          <Card className="max-w-2xl mx-auto">
+          <Card className="max-w-2xl mx-auto bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-xl">
             <CardHeader>
               <CardTitle>Get Your Free Tech Consultation</CardTitle>
               <CardDescription>
@@ -338,10 +338,10 @@ const Developers = () => {
                   />
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button type="submit" className="flex-1">
+                  <Button type="submit" className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                     Get Free Consultation
                   </Button>
-                  <Button type="button" variant="outline" className="flex-1">
+                  <Button type="button" variant="outline" className="flex-1 border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-950">
                     Book a Call
                   </Button>
                 </div>
@@ -352,11 +352,11 @@ const Developers = () => {
           <div className="text-center mt-12">
             <p className="text-muted-foreground mb-4">Prefer to reach out directly?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-              <a href="mailto:developers@infradefend.com" className="text-primary hover:underline">
+              <a href="mailto:developers@infradefend.com" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline font-medium">
                 developers@infradefend.com
               </a>
-              <span className="hidden sm:inline text-muted-foreground">|</span>
-              <a href="tel:+91-8369645695" className="text-primary hover:underline">
+              <span className="hidden sm:inline text-gray-400">|</span>
+              <a href="tel:+91-8369645695" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline font-medium">
                 +91-8369645695
               </a>
             </div>
@@ -365,7 +365,7 @@ const Developers = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t">
+      <footer className="py-12 px-4 border-t bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
@@ -376,19 +376,19 @@ const Developers = () => {
             </div>
             
             <div className="flex flex-wrap gap-6 text-sm">
-              <a href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors font-medium">
                 Main Site
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 transition-colors">
                 Privacy Policy
               </a>
-              <a href="mailto:developers@infradefend.com" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="mailto:developers@infradefend.com" className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 transition-colors">
                 Contact
               </a>
             </div>
           </div>
           
-          <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+          <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-600 dark:text-gray-400">
             © 2024 InfraDefend Developers. All rights reserved.
           </div>
         </div>
