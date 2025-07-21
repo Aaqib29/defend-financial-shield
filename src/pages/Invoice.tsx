@@ -41,8 +41,24 @@ const Invoice = () => {
 <p>Best regards,<br>
 The Infradefend Team</p>`);
 
+  // Engagement Letter state
+  const [engagementData, setEngagementData] = useState({
+    clientName: "",
+    projectTitle: "",
+    startDate: new Date().toISOString().split('T')[0],
+    endDate: "",
+    scope: "",
+    deliverables: "",
+    timeline: "",
+    terms: "This engagement is subject to our standard terms and conditions."
+  });
+
   const handleInvoiceChange = (field: string, value: string) => {
     setInvoiceData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleEngagementChange = (field: string, value: string) => {
+    setEngagementData(prev => ({ ...prev, [field]: value }));
   };
 
   const downloadPDF = async (elementId: string, filename: string) => {
@@ -104,7 +120,7 @@ The Infradefend Team</p>`);
 
         {/* Tabs */}
         <Tabs defaultValue="invoice" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 max-w-md">
+          <TabsList className="grid w-full grid-cols-3 max-w-lg">
             <TabsTrigger value="invoice" className="flex items-center space-x-2">
               <FileText className="w-4 h-4" />
               <span>Invoice</span>
@@ -112,6 +128,10 @@ The Infradefend Team</p>`);
             <TabsTrigger value="letterhead" className="flex items-center space-x-2">
               <FileText className="w-4 h-4" />
               <span>Letterhead</span>
+            </TabsTrigger>
+            <TabsTrigger value="engagement" className="flex items-center space-x-2">
+              <FileText className="w-4 h-4" />
+              <span>Engagement Letter</span>
             </TabsTrigger>
           </TabsList>
 
@@ -355,6 +375,230 @@ The Infradefend Team</p>`);
                     <Button 
                       variant="outline"
                       onClick={() => printDocument('letterhead-preview')}
+                      className="flex items-center space-x-2"
+                    >
+                      <Printer className="w-4 h-4" />
+                      <span>Print</span>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          {/* Engagement Letter Tab */}
+          <TabsContent value="engagement" className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Engagement Letter Form */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Engagement Letter Details</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Client Name/Company</label>
+                    <Input
+                      placeholder="Client Name or Company"
+                      value={engagementData.clientName}
+                      onChange={(e) => handleEngagementChange('clientName', e.target.value)}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Project Title</label>
+                    <Input
+                      placeholder="Security Assessment Project"
+                      value={engagementData.projectTitle}
+                      onChange={(e) => handleEngagementChange('projectTitle', e.target.value)}
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Start Date</label>
+                      <Input
+                        type="date"
+                        value={engagementData.startDate}
+                        onChange={(e) => handleEngagementChange('startDate', e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">End Date</label>
+                      <Input
+                        type="date"
+                        value={engagementData.endDate}
+                        onChange={(e) => handleEngagementChange('endDate', e.target.value)}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Scope of Work</label>
+                    <Textarea
+                      placeholder="Define the scope of work..."
+                      value={engagementData.scope}
+                      onChange={(e) => handleEngagementChange('scope', e.target.value)}
+                      rows={4}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Deliverables</label>
+                    <Textarea
+                      placeholder="List expected deliverables..."
+                      value={engagementData.deliverables}
+                      onChange={(e) => handleEngagementChange('deliverables', e.target.value)}
+                      rows={3}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Timeline</label>
+                    <Textarea
+                      placeholder="Project timeline and milestones..."
+                      value={engagementData.timeline}
+                      onChange={(e) => handleEngagementChange('timeline', e.target.value)}
+                      rows={3}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Terms & Conditions</label>
+                    <Textarea
+                      value={engagementData.terms}
+                      onChange={(e) => handleEngagementChange('terms', e.target.value)}
+                      rows={3}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Engagement Letter Preview */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Preview</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div id="engagement-preview" className="bg-background border rounded-lg shadow-sm min-h-[600px] print:shadow-none print:border-none print:p-0">
+                    {/* Header */}
+                    <div className="border-b-2 border-primary p-6 mb-6 print:p-4 print:mb-4">
+                      <div className="flex items-center justify-between print:flex-col print:items-start print:space-y-4">
+                        <div>
+                          <h1 className="text-3xl font-bold text-primary mb-2">INFRADEFEND</h1>
+                          <p className="text-muted-foreground">Security Infrastructure Solutions</p>
+                        </div>
+                        <div className="text-right print:text-left text-sm text-muted-foreground">
+                          <p>Mumbai, Maharashtra, India</p>
+                          <p>Phone: +91 8369645695</p>
+                          <p>Email: contact@infradefend.com</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Date */}
+                    <div className="px-6 mb-6">
+                      <p className="text-right text-muted-foreground">{new Date().toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}</p>
+                    </div>
+
+                    {/* Letter Content */}
+                    <div className="px-6 pb-6 space-y-6">
+                      <div className="text-center">
+                        <h2 className="text-2xl font-bold text-foreground mb-4">ENGAGEMENT LETTER</h2>
+                        <h3 className="text-xl text-muted-foreground">
+                          {engagementData.projectTitle || "Security Assessment Project"}
+                        </h3>
+                      </div>
+
+                      <div>
+                        <p className="text-foreground mb-4">
+                          <strong>To:</strong> {engagementData.clientName || "[Client Name]"}
+                        </p>
+                        
+                        <p className="text-foreground leading-relaxed">
+                          We are pleased to confirm our understanding of the services we are to provide for your organization. This letter sets forth the terms of our engagement.
+                        </p>
+                      </div>
+
+                      {engagementData.scope && (
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-2">Scope of Work:</h4>
+                          <p className="text-foreground leading-relaxed whitespace-pre-wrap">{engagementData.scope}</p>
+                        </div>
+                      )}
+
+                      {engagementData.deliverables && (
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-2">Deliverables:</h4>
+                          <p className="text-foreground leading-relaxed whitespace-pre-wrap">{engagementData.deliverables}</p>
+                        </div>
+                      )}
+
+                      {engagementData.timeline && (
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-2">Timeline:</h4>
+                          <p className="text-foreground leading-relaxed whitespace-pre-wrap">{engagementData.timeline}</p>
+                        </div>
+                      )}
+
+                      {(engagementData.startDate || engagementData.endDate) && (
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-2">Project Duration:</h4>
+                          <p className="text-foreground">
+                            {engagementData.startDate && `Start Date: ${new Date(engagementData.startDate).toLocaleDateString()}`}
+                            {engagementData.startDate && engagementData.endDate && " | "}
+                            {engagementData.endDate && `End Date: ${new Date(engagementData.endDate).toLocaleDateString()}`}
+                          </p>
+                        </div>
+                      )}
+
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Terms & Conditions:</h4>
+                        <p className="text-foreground leading-relaxed whitespace-pre-wrap">{engagementData.terms}</p>
+                      </div>
+
+                      <div className="pt-8">
+                        <p className="text-foreground mb-6">
+                          Please sign and return one copy of this letter to indicate your acknowledgment and acceptance of the terms of our engagement.
+                        </p>
+                        
+                        <div className="grid grid-cols-2 gap-8 mt-12">
+                          <div>
+                            <div className="border-b border-border w-48 mb-2"></div>
+                            <p className="text-sm text-muted-foreground">INFRADEFEND Representative</p>
+                            <p className="text-sm text-muted-foreground">Date: ___________</p>
+                          </div>
+                          <div>
+                            <div className="border-b border-border w-48 mb-2"></div>
+                            <p className="text-sm text-muted-foreground">Client Representative</p>
+                            <p className="text-sm text-muted-foreground">Date: ___________</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="border-t border-border p-6 mt-8 text-center text-sm text-muted-foreground print:p-4 print:mt-6">
+                      <p>INFRADEFEND | Protecting Your Digital Infrastructure</p>
+                      <p>Mumbai, Maharashtra, India | contact@infradefend.com | +91 8369645695</p>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex space-x-3 mt-4">
+                    <Button 
+                      onClick={() => downloadPDF('engagement-preview', `engagement-letter-${Date.now()}.pdf`)}
+                      className="flex items-center space-x-2"
+                    >
+                      <Download className="w-4 h-4" />
+                      <span>Download PDF</span>
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      onClick={() => printDocument('engagement-preview')}
                       className="flex items-center space-x-2"
                     >
                       <Printer className="w-4 h-4" />
