@@ -188,20 +188,22 @@ The Infradefend Team</p>`);
                   <CardTitle>Preview</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div id="invoice-preview" className="bg-white p-6 border rounded-lg shadow-sm min-h-[500px]">
+                  <div id="invoice-preview" className="bg-background p-6 border rounded-lg shadow-sm min-h-[500px] print:shadow-none print:border-none print:p-4">
                     {/* Invoice Header */}
-                    <div className="flex justify-between items-start mb-8">
+                    <div className="flex justify-between items-start mb-8 print:mb-6">
                       <div>
-                        <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                          <FileText className="w-8 h-8 text-white" />
+                        <h1 className="text-3xl font-bold text-primary mb-2">INFRADEFEND</h1>
+                        <p className="text-muted-foreground text-sm mb-1">Security Infrastructure Solutions</p>
+                        <div className="text-sm text-muted-foreground space-y-1">
+                          <p>Mumbai, Maharashtra, India</p>
+                          <p>Phone: +91 8369645695</p>
+                          <p>Email: contact@infradefend.com</p>
                         </div>
-                        <h1 className="text-2xl font-bold text-blue-600">INFRADEFEND</h1>
-                        <p className="text-gray-600">Security Infrastructure Solutions</p>
                       </div>
                       <div className="text-right">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-2">INVOICE</h2>
-                        <p className="text-gray-600">#{invoiceData.invoiceNumber}</p>
-                        <p className="text-gray-600">{new Date(invoiceData.date).toLocaleDateString()}</p>
+                        <h2 className="text-3xl font-bold text-foreground mb-3">INVOICE</h2>
+                        <p className="text-muted-foreground text-lg">#{invoiceData.invoiceNumber}</p>
+                        <p className="text-muted-foreground">{new Date(invoiceData.date).toLocaleDateString()}</p>
                       </div>
                     </div>
 
@@ -301,24 +303,18 @@ The Infradefend Team</p>`);
                   <CardTitle>Preview</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div id="letterhead-preview" className="bg-white border rounded-lg shadow-sm min-h-[600px]">
+                  <div id="letterhead-preview" className="bg-background border rounded-lg shadow-sm min-h-[600px] print:shadow-none print:border-none print:p-0">
                     {/* Letterhead Header */}
-                    <div className="border-b-2 border-blue-600 p-6 mb-6">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center">
-                            <FileText className="w-8 h-8 text-white" />
-                          </div>
-                          <div>
-                            <h1 className="text-2xl font-bold text-blue-600">INFRADEFEND</h1>
-                            <p className="text-gray-600">Security Infrastructure Solutions</p>
-                          </div>
+                    <div className="border-b-2 border-primary p-6 mb-6 print:p-4 print:mb-4">
+                      <div className="flex items-center justify-between print:flex-col print:items-start print:space-y-4">
+                        <div>
+                          <h1 className="text-3xl font-bold text-primary mb-2">INFRADEFEND</h1>
+                          <p className="text-muted-foreground">Security Infrastructure Solutions</p>
                         </div>
-                        <div className="text-right text-sm text-gray-600">
-                          <p>123 Security Street</p>
-                          <p>Cyber City, CC 12345</p>
-                          <p>Phone: (555) 123-4567</p>
-                          <p>Email: info@infradefend.com</p>
+                        <div className="text-right print:text-left text-sm text-muted-foreground">
+                          <p>Mumbai, Maharashtra, India</p>
+                          <p>Phone: +91 8369645695</p>
+                          <p>Email: contact@infradefend.com</p>
                         </div>
                       </div>
                     </div>
@@ -341,9 +337,9 @@ The Infradefend Team</p>`);
                     </div>
 
                     {/* Footer */}
-                    <div className="border-t border-gray-200 p-6 mt-8 text-center text-sm text-gray-600">
+                    <div className="border-t border-border p-6 mt-8 text-center text-sm text-muted-foreground print:p-4 print:mt-6">
                       <p>INFRADEFEND | Protecting Your Digital Infrastructure</p>
-                      <p>www.infradefend.com | info@infradefend.com | (555) 123-4567</p>
+                      <p>Mumbai, Maharashtra, India | contact@infradefend.com | +91 8369645695</p>
                     </div>
                   </div>
 
